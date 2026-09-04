@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: deploy1
+  name: deploy1
+  namespace: dev-environment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deploy1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: deploy1
+    spec:
+      tolerations:
+      - effect: "NoSchedule"
+        key: "app"
+        operator: "Equal"
+        value: "prod"
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
