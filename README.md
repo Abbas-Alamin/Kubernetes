@@ -26,10 +26,10 @@ An end-to-end repository showcasing declarative Kubernetes orchestration, core w
 
 # 📂 Featured Workloads Breakdown
 
-## 1️⃣ 01-core-concepts — Fundamental API Objects
+## 1️⃣ core-concepts — Fundamental API Objects
 **Description:** A foundational module demonstrating the lifecycle of Kubernetes core components. Focuses on imperative dry-run generation for high speed and declarative manifest accuracy.
 Path: ./core-concepts/
-Key Files: namespace.yaml, pod.yaml, deployment.yaml
+Key Files: *namespace.yaml*, *pod.yaml*, *deployment.yaml*
 
 # 🚀 Quick Start Guide
 
