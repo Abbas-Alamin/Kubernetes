@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pod1
+  name: pod1
+  namespace: dev-environment
+spec:
+  tolerations:
+  - effect: "NoSchedule"
+    key: "app"
+    operator: "Equal"
+    value: "prod"
+  containers:
+  - image: nginx
+    name: pod1
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
