@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        volumeMounts:
+        - name: web-content
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: web-content
+        persistentVolumeClaim:
+          claimName: demo-pvc # or (storage-pvc)
